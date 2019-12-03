@@ -1,6 +1,8 @@
 import sys
 import json
 
+import couchdb
+
 def read_json_file(file_name):
     with open(file_name, "r") as json_file:
         json_data = json.load(json_file)
@@ -14,18 +16,12 @@ def is_header_line(s):
     return s.startswith("#")
 
 def read_csv(file_name):
-    lines = []
+    table = []
     file_object = open(file_name)
     for line in file_object:
-        lines.append(line.rstrip() )
+        table.append(line.rstrip().split(";") )
+       
     file_object.close()
-        
-    return lines
-
-def make_table(lines):  
-    table = []
-    for i, line in enumerate(lines):
-        table.append(line.split(";"))    
 
     return table
 
@@ -76,10 +72,10 @@ def table_to_dict(table, header_dict):
     return db_dict
 
 if __name__ == "__main__":
-    lines = read_csv("AP.csv")
+    table = read_csv("AP.csv")
     header_dict = read_json_file("header.json")
 
-    table = make_table(lines)
+    
     check_table(table)
 
     db_dict = table_to_dict(table, header_dict)
