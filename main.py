@@ -39,16 +39,35 @@ def clear_string(s):
     
     return s
 
-def translate_header(line_list, db_dict, trans_dict):
+def remove_element(line_list,d):
+    r = d.get("remove", False) 
+    if r:
+        for i in r:
+            del line_list [i]
+
+    return line_list
+
+def translate_header(line_list, db_dict, header_dict):
     key_entry = line_list[0]
-    val_entry = line_list[1]
-
     clear_key = clear_string( key_entry )
+    d = header_dict.get( clear_key, False )
+    
+    if d:
+        v = d.get("value")
+        k = d.get("key")
+        line_list=remove_element(line_list,d)
 
-    trans_val = trans_dict.get( clear_key )
+        all=range (len(line_list))
 
-    if trans_val:
-        db_dict[trans_val] = val_entry
+        if type(v) == list:
+            if len(v) == 1:
+                db_dict[k] = line_list[ v[0] ]
+            else: 
+                db_dict[k] = [line_list[i] for i in v] 
+        if type(v) == str:
+            db_dict[k] = v
+            if v == "@all":
+                db_dict[k] = [line_list[i] for i in all]
 
     return db_dict
 
@@ -75,7 +94,6 @@ if __name__ == "__main__":
     table = read_csv("AP.csv")
     header_dict = read_json_file("header.json")
 
-    
     check_table(table)
 
     db_dict = table_to_dict(table, header_dict)
