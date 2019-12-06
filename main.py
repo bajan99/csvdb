@@ -39,13 +39,22 @@ def clear_string(s):
     
     return s
 
-def remove_element(line_list,d):
+def remove_element(line_list, d):
     r = d.get("remove", False) 
     if r:
         for i in r:
             del line_list [i]
 
     return line_list
+
+def replace_element(line_list, d):
+    r=d.get("replace") 
+    if r:
+        c=r.get("col")
+        v=r.get("val")
+        line_list[c] = v
+
+    return line_list 
 
 def translate_header(line_list, db_dict, header_dict):
     key_entry = line_list[0]
@@ -56,7 +65,7 @@ def translate_header(line_list, db_dict, header_dict):
         v = d.get("value")
         k = d.get("key")
         line_list=remove_element(line_list,d)
-
+        line_list=replace_element(line_list,d)
         all=range (len(line_list))
 
         if type(v) == list:

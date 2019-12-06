@@ -1,51 +1,79 @@
 {
-"Protokolldatei_des_Waermezaehler-Kompakt-Pruefstandes": 
-        {"key": "Title", 
-         "value": "Protokolldatei des Waermezaehler-Kompakt-Pruefstandes"},
-"Datum_der_Erstellung":
-        {"key":"Date",
-        "value":[1]},
-"Programmversion":
-        {"key": "FileName",
-        "value":[1]},
-"Bediener":
-        {"key":"Maintainer",
-         "value":[1]},
-"Signalname":
-        {"key":"SignalName",
-        "value":"@all",
-        "remove":[0]},
-"Einheit":
-        {"key":"unit",
-        "value":"@all"},
-"Seriennummer":
-        {"key":"serialNumber",
-         "value":"@all"},
-"Linear_/_Messbereich_(Poly.)":
-        {"key":"Poly",
-        "value":"@all"},
-"max":
-        {"key":"max",
-        "value":"@all"},
-"min":
-        {"key":"min",
-        "value":"@all"},
-"Polynom":
-        {"key":"polynomial",
-        "value":"@all"},
-"z0":
-        {"key":"z0",
-         "value":"@all"},
-"z1":
-        {"key":"z1",
-        "value":"@all"},
-"z2":
-        {"key":"z2",
-        "value":"@all"},      
-"z3":
-        {"key":"z3",
-        "value":"@all"},
-"z4":
-        {"key":"z4",
-        "value":"@all"}
+        "Protokolldatei_des_Waermezaehler-Kompakt-Pruefstandes": {
+                "key": "Title",
+                "value": "Protokolldatei des Waermezaehler-Kompakt-Pruefstandes"
+        },
+        "Datum_der_Erstellung": {
+                "key": "Date",
+                "value": [
+                        1
+                ]
+        },
+        "Programmversion": {
+                "key": "FileName",
+                "value": [
+                        1
+                ]
+        },
+        "Bediener": {
+                "key": "Maintainer",
+                "value": [
+                        1
+                ]
+        },
+        "Signalname": {
+                "key": "SignalName",
+                "value": "@all",
+                "remove": [
+                        0
+                ]
+        },
+        "Einheit": {
+                "key": "unit",
+                "value": "@all",
+                "replace": {
+                        "col": 0,
+                        "val": "Unit"
+                }
+        },
+        "Seriennummer": {
+                "key": "serialNumber",
+                "value": "@all"
+        },
+        "Linear_/_Messbereich_(Poly.)": {
+                "key": "Poly",
+                "value": "@all"
+        },
+        "max": {
+                "key": "max",
+                "value": "@all"
+        },
+        "min": {
+                "key": "min",
+                "value": "@all"
+        },
+        "Polynom": {
+                "key": "polynomial",
+                "value": "@all"
+        },
+        "z0": {
+                "key": "z0",
+                "value": "@all"
+        },
+        "z1": {
+                "key": "z1",
+                "value": "@all"
+        },
+        "z2": {
+                "key": "z2",
+                "value": "@all"
+        },
+        "z3": {
+                "key": "z3",
+                "value": "@all"
+        },
+        "z4": {
+                "key": "z4",
+                "value": "@all"
+        }
 }
